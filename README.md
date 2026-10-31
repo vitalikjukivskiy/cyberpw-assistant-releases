@@ -2,6 +2,10 @@
 
 Цей репозиторій містить готовий інсталятор CyberPW Assistant. Вихідний код застосунку зберігається приватно.
 
+## Сумісність із новим клієнтом
+
+Версія 2.0.91 підтримує клієнт CyberPW від 28.10.2026: відновлено визначення персонажа, титули, журнал квестів, інвентар і деталі спорядження. Оновлено Чон-Пон, паті-дії, підбір предметів і профіль комісійки. Після оновлення перезапустіть хелпер і оновіть список вікон; перезапуск гри не потрібний.
+
 ## VIP без оплати
 
 Хелпер повністю безкоштовний. VIP-доступ відкрито всім користувачам без оплати й без терміну дії. Купувати або продовжувати VIP більше не потрібно. Для онлайн-функцій увійдіть у свій особистий кабінет.
@@ -16,13 +20,13 @@
 
 Імена також збережені у постійному залі слави на головній сторінці хелпера.
 
-## Завантаження · 2.0.90-beta
+## Завантаження · 2.0.91-beta
 
-Випуск від **26.10.2026**. Це **beta / prerelease**.
+Випуск від **31.10.2026**. Це **beta / prerelease**.
 
-[**Завантажити CyberPW-Assistant-Setup.exe · 2.0.90-beta**](https://github.com/vitalikjukivskiy/cyberpw-assistant-releases/releases/download/v2.0.90-beta/CyberPW-Assistant-Setup.exe)
+[**Завантажити CyberPW-Assistant-Setup.exe · 2.0.91-beta**](https://github.com/vitalikjukivskiy/cyberpw-assistant-releases/releases/download/v2.0.91-beta/CyberPW-Assistant-Setup.exe)
 
-[Опис оновлення й анонс](https://github.com/vitalikjukivskiy/cyberpw-assistant-releases/releases/tag/v2.0.90-beta) · [Усі релізи](https://github.com/vitalikjukivskiy/cyberpw-assistant-releases/releases)
+[Опис оновлення й анонс](https://github.com/vitalikjukivskiy/cyberpw-assistant-releases/releases/tag/v2.0.91-beta) · [Усі релізи](https://github.com/vitalikjukivskiy/cyberpw-assistant-releases/releases)
 
 Закрийте Assistant і запустіть інсталятор. Він оновлює програму зі збереженням персонажів, макросів, улюблених предметів і налаштувань. Гра й Assistant мають працювати з однаковими правами Windows. Після перезапуску гри повторно виберіть вікна паті й синхронізуйте потрібного персонажа.
 
