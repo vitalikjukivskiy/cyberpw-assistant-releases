@@ -1,0 +1,50 @@
+name: Archive superseded CyberPW Assistant releases
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/archive-old-releases-20261111.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Archive older releases, preserving latest five and all assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          # One-time, reversible cleanup: no release or asset is deleted.
+          # Keep publicly visible: v2.0.87-beta through v2.0.91-beta.
+          while read -r id expected; do
+            [ -n "$id" ] || continue
+            actual=$(gh api "repos/$GH_REPO/releases/$id" --jq '.tag_name')
+            if [ "$actual" != "$expected" ]; then
+              echo "::error::Release $id changed: expected $expected, found $actual"
+              exit 1
+            fi
+            draft=$(gh api "repos/$GH_REPO/releases/$id" --jq '.draft')
+            if [ "$draft" = "true" ]; then
+              echo "Already archived: $expected"
+              continue
+            fi
+            gh api --method PATCH "repos/$GH_REPO/releases/$id" -F draft=true --silent
+            echo "Archived $expected"
+          done <<'RELEASES'
+          412031060 v2.0.86-beta
+          411731895 v2.0.85-beta
+          409533647 v2.0.83-beta
+          405415870 v2.0.82-beta
+          404675756 v2.0.81-beta
+          403931671 v2.0.80-beta
+          403752943 v2.0.79-beta
+          403708519 v2.0.78-beta
+          403006166 v2.0.77-beta
+          397234277 v2.0.76-beta
+          RELEASES
